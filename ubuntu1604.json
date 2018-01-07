@@ -4,7 +4,7 @@
     "cpu": "2",
     "disk_size": "21440",
     "ftp_proxy": "{{env `ftp_proxy` }}",
-    "headless": "false",
+    "headless": "true",
     "http_proxy": "{{env `http_proxy` }}",
     "https_proxy": "{{env `https_proxy` }}",
     "hyperv_switchname": "{{env `hyperv_switchname` }}",
