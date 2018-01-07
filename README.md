@@ -21,7 +21,8 @@ This template has been created in order to resolve problems with provisioning Ub
 - For Hyper-V, if you would like to use Gen. 2 machines, you can't use floppies (https://technet.microsoft.com/en-us/library/dn282285(v=ws.11).aspx), therefore you have to stick to `preseed/url` method for providing preseed.cfg.
 - For Hyper-V, it is important to perform `d-i preseed/late_command string in-target apt-get install -y --install-recommends linux-virtual-lts-xenial linux-tools-virtual-lts-xenial linux-cloud-tools-virtual-lts-xenial;`, directly in preseed.cfg, *BEFORE* any provisioner runs. These packages are needed in order to discover IP address of VM properly so that Packer can connect via SSH. Otherwise it will be waiting for IP address forever, more details can be found in "Notes" in https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/supported-ubuntu-virtual-machines-on-hyper-v
 - For shell provisioners and propagation of proxy settings, use:
-```"environment_vars": [
+```
+"environment_vars": [
     "FTP_PROXY={{ user `ftp_proxy` }}",
     "HTTPS_PROXY={{ user `https_proxy` }}",
     "HTTP_PROXY={{ user `http_proxy` }}",
@@ -30,4 +31,5 @@ This template has been created in order to resolve problems with provisioning Ub
     "http_proxy={{ user `http_proxy` }}",
     "https_proxy={{ user `https_proxy` }}",
     "no_proxy={{ user `no_proxy` }}"
-  ]```
+  ]
+```
