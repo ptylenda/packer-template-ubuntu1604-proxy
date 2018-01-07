@@ -6,11 +6,11 @@
 
 To build Hyper-V only:
 
-$  packer build -only=hyperv-iso .\ubuntu1604.json
+	$  packer build -only=hyperv-iso .\ubuntu1604.json
 
 To build QEMU only:
 
-$ packer build -only=qemu .\ubuntu1604.json
+	$ packer build -only=qemu .\ubuntu1604.json
 
 ## Notes
 This template has been created in order to resolve problems with provisioning Ubuntu Server 16.04 behind a proxy. Keep in mind that:
